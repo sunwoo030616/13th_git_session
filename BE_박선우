@@ -1,0 +1,147 @@
+# 1주차 - Git, GitHub, Django 정리
+
+## 📌 Git 이란?
+
+- 오픈 소스 분산 버전 관리 시스템(VCS)
+- **분산**: 개발자가 로컬에 전체 히스토리를 가지고 있음 → 오프라인에서도 작업 가능
+- **버전 관리**: 코드 변경 사항 기록 및 추적 가능, 되돌리기 가능
+
+## 📌 Git이 없으면?
+
+- 변경사항 관리 어려움
+- 작업 시 충돌 빈번
+- 백업 어려움
+- 파일을 수동으로 최신화해야 함
+
+---
+
+## 📌 Git vs GitHub
+
+| Git | GitHub |
+| --- | --- |
+| 로컬 버전 관리 도구 | 온라인 저장소 및 협업 플랫폼 |
+| 로컬에서만 사용 가능 | 팀원과 온라인에서 협업 가능 |
+- 협업을 위해서는 Git + GitHub 같이 사용
+
+---
+
+## 📌 GitHub 개인 레포지토리 만들기
+
+1. 레포지토리 생성 (`README.md`, `.gitignore` 설정)
+2. 로컬 폴더 만들고 `git init`
+3. 사용자 등록
+    
+    ```bash
+    git config --global user.name "아이디"
+    git config --global user.email "이메일"
+    
+    ```
+    
+4. 원격 저장소 연결
+    
+    ```bash
+    git remote add origin [주소]
+    git branch -M main
+    git push origin main
+    
+    ```
+    
+
+---
+
+## 📌 Git 기본 흐름
+
+1. 작업 디렉토리에서 작업
+2. `git add` 로 스테이징
+3. `git commit` 으로 로컬 저장
+4. `git push` 로 원격 저장소에 업로드
+5. 원격 저장소에서 `git pull` 로 최신화
+
+---
+
+## 📌 Git 구조
+
+- Working Directory: 실제 작업하는 폴더
+- Staging Area: 커밋할 파일 임시 저장
+- Local Repository: 로컬 저장소
+- Remote Repository: GitHub 원격 저장소
+
+---
+
+## 📌 Git 협업 흐름
+
+1. 중앙 레포지토리 Fork → 개인 레포지토리 생성
+2. 브랜치 생성 후 작업
+3. 개인 레포에 commit / push
+4. Pull Request (PR) → 중앙 레포로 코드 요청
+5. Merge 후 `git pull upstream main` 으로 반영
+
+---
+
+## 📌 Git 브랜치 관련 명령어
+
+```bash
+git branch                 # 브랜치 목록 확인
+git branch 브랜치명          # 브랜치 생성
+git switch 브랜치명          # 브랜치 이동
+git branch -d 브랜치명       # 브랜치 삭제
+
+```
+
+---
+
+## 📌 Django란?
+
+- Python 기반 웹 프레임워크
+- 강력한 ORM 제공 (객체 ↔ DB 연결)
+- 다양한 웹 서비스 개발 가능
+- Admin 페이지 자동 생성
+
+---
+
+## 📌 Django 개발 환경 세팅
+
+1. 가상환경 생성
+    
+    ```bash
+    pip3 install pipenv
+    pipenv shell
+    
+    ```
+    
+2. Django 설치
+    
+    ```bash
+    pip install django
+    
+    ```
+    
+3. 프로젝트 생성
+    
+    ```bash
+    django-admin startproject project .
+    
+    ```
+    
+4. 앱 생성
+    
+    ```bash
+    python manage.py startapp main
+    
+    ```
+    
+
+---
+
+## 📌 Django 주요 파일
+
+| 파일 | 설명 |
+| --- | --- |
+| `settings.py` | 프로젝트 설정 |
+| `urls.py` | URL 연결 설정 |
+| `views.py` | 로직 처리 |
+| `models.py` | 데이터베이스 모델 |
+| `admin.py` | 관리자 페이지 설정 |
+| `manage.py` | Django 명령어 실행 |
+
+---
